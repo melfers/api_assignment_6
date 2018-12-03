@@ -3,6 +3,7 @@
 const apiKey = 'yrvZzbilpP8UzCcqQEgUZC3fxE74YrL5YvBtg0nf'; 
 const searchURL = 'https://api.nps.gov/api/v1/parks';
 
+
 function formatQueryParams(params) {
     const queryItems = Object.keys(params)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -11,8 +12,8 @@ function formatQueryParams(params) {
 
 function getParks(query, maxResults=10) {
     const params = {
-      api_key: apiKey,
       q: query,
+      api_key: apiKey,
       maxResults
     };
     const queryString = formatQueryParams(params)
