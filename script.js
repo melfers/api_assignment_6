@@ -10,6 +10,22 @@ function formatQueryParams(params) {
     return queryItems.join('&');
   }
 
+function displayResults(responseJson) {
+  // if there are previous results, remove them
+  console.log(responseJson);
+  $('#results-list').empty();
+  // iterate through the items array
+  for (let i = 0; i < responseJson.length; i++){
+    $('#results-list').append(
+      `<li><h3>${responseJson[i].fullName}</h3>
+      <p>${responseJson[i].description}</p>
+      <img src='${responseJson[i].url}'>
+      </li>`
+    )};
+  //display the results section  
+  $('#results').removeClass('hidden');
+};
+
 function getParks(query, maxResults=10) {
     const params = {
       q: query,
