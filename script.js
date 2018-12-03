@@ -25,11 +25,11 @@ function formatQueryParams(params) {
     $('#results').removeClass('hidden');
   };
 
-function getParks(query, maxResults=10) {
+function getParks(query, limit=10) {
     const params = {
-      q: query,
-      api_key: apiKey,
-      maxResults
+        limit,
+        q: query,
+        api_key: apiKey
     };
     const queryString = formatQueryParams(params)
     const url = searchURL + '?' + queryString;
