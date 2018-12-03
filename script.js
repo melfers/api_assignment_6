@@ -14,14 +14,10 @@ function formatQueryParams(params) {
     // if there are previous results, remove them
     console.log(responseJson);
     $('#results-list').empty();
-    // iterate through the items array
+    // iterate through the array
     for (let i = 0; i < responseJson.length; i++){
-      // for each video object in the items 
-      //array, add a list item to the results 
-      //list with the video title, description,
-      //and thumbnail
       $('#results-list').append(
-        `<li><h3>${responseJson[i].fullname}</h3>
+        `<li><h3>${responseJson[i].fullName}</h3>
         <p>${responseJson[i].description}</p>
         <img src='${responseJson[i].url}'>
         </li>`
