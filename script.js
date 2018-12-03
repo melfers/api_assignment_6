@@ -24,7 +24,7 @@ function displayResults(responseJson) {
     )};
   //display the results section  
   $('#results').removeClass('hidden');
-};
+}
 
 function getParks(query, maxResults=10) {
     const params = {
